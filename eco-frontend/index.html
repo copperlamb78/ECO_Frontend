@@ -158,5 +158,24 @@
     Ecoleta &mdash; Descarte consciente
   </footer>
 
+  <script>
+    async function testarConexao() {
+        try {
+          const response = await fetch(`${window.env.API_URL}/pontos`);
+          
+          if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status}`);
+          }
+          
+          const data = await response.json();
+          console.log("Dados recebidos da API com sucesso:", data);
+  
+        } catch (error) {
+          console.error("Falha ao conectar com a API:", error);
+        }
+    }
+    
+    testarConexao();
+  </script>
 </body>
 </html>
