@@ -342,7 +342,7 @@
       async function buscarPontos(lat, lng) {
         try {
           const res = await fetch(
-            `${API_URL}/pontos?latitude=${lat}&longitude=${lng}&distancia_metros=5000000`,
+            `https://eco-backend-vert.vercel.app/pontos?latitude=${lat}&longitude=${lng}&distancia_metros=5000000`,
           );
           const data = await res.json();
           renderizarLista(data.pontos);
